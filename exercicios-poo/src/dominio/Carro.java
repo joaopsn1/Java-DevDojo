@@ -11,20 +11,23 @@ public class Carro {
     public double valorPedagio;
     public int quantidadePedagio;
 
-    public void gastoDeCombustivel(double distanciaViagem, double consumo) {
+    public void gastoDeCombustivel() {
         System.out.println("--------------------------------------------");
         double gastoCombustivel = distanciaViagem / consumo;
         System.out.printf("Litros de Combustível gasto na ida: %.2f\n", gastoCombustivel);
         tanque -= gastoCombustivel;
         System.out.printf("Litros de Combustível restantes: %.2f\n", tanque);
-        if (tanque < 40) {
-            System.out.println("É necessário abastecer o carro para a viagem de volta!");
+        if (tanque < 27.55) {
+            System.out.println("É necessário abastecer o carro");
+            tanque += gastoCombustivel;
+        } else {
+            System.out.println("Não é necessário abastecer o carro");
             return;
         }
-        System.out.println("Não é necessário abastecer o carro para a viagem de volta!");
+        System.out.printf("Tanque cheio: %.2f\n", tanque);
     }
 
-    public void gastoViagem(double valorGasolina, double valorPedagio) {
+    public void gastoViagem() {
         System.out.println("--------------------------------------------");
         double valorTotalPedagio = valorPedagio * quantidadePedagio;
         System.out.printf("Valor Total Pedágio: R$ %.2f\n", valorTotalPedagio);
