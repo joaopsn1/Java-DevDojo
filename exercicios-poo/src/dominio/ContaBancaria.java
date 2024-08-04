@@ -8,13 +8,22 @@ public class ContaBancaria {
     private double saldoPoupanca;
     private double salario;
 
+    public void init(String titularConta, int numeroContaCorrente, double saldoContaCorrente, int numeroPoupanca, double saldoPoupanca, double salario) {
+        this.titularConta = titularConta;
+        this.numeroContaCorrente = numeroContaCorrente;
+        this.saldoContaCorrente = saldoContaCorrente;
+        this.numeroPoupanca = numeroPoupanca;
+        this.saldoPoupanca = saldoPoupanca;
+        this.salario = salario;
+    }
+
     public void imprimeDados() {
         System.out.println("Dados da Conta Bancária");
         System.out.println("Titular: " + this.titularConta);
         System.out.println("Conta Corrente: " + this.numeroContaCorrente);
-        System.out.printf("Saldo Atual: R$ %.2f\n", this.saldoContaCorrente);
+        System.out.printf("Saldo Atual Conta Corrente: R$ %.2f\n", this.saldoContaCorrente);
         System.out.println("Conta Poupança: " + this.numeroPoupanca);
-        System.out.printf("Saldo Atual: R$ %.2f\n", this.saldoPoupanca);
+        System.out.printf("Saldo Atual Poupança: R$ %.2f\n", this.saldoPoupanca);
     }
 
     public void depositoSalarioContaCorrente() {
