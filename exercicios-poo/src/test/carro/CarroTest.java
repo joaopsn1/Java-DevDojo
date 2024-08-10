@@ -1,7 +1,7 @@
-package test;
+package test.carro;
 
-import dominio.Carro;
-import dominio.ImpressoraCarro;
+import dominio.carro.Carro;
+import dominio.carro.ImpressoraCarro;
 
 public class CarroTest {
     public static void main(String[] args) {

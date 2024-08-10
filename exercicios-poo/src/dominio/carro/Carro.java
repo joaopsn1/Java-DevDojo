@@ -1,4 +1,4 @@
-package dominio;
+package dominio.carro;
 
 public class Carro {
     public String nome;
