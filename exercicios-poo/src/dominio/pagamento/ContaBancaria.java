@@ -1,6 +1,6 @@
 package dominio.pagamento;
 
-public class ContaBancaria extends Pessoa{
+public class ContaBancaria extends Pessoa {
     private int numeroConta = 0;
     private int senha = 0;
 

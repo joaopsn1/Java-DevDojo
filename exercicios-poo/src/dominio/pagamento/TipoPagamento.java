@@ -1,41 +1,42 @@
 package dominio.pagamento;
 
 public enum TipoPagamento {
-    DEBITO{
+    DEBITO {
         @Override
-        public double taxaMaquininha(double valor) {
-            return valor * 1.03;
+        public double jurosParcela(double valor) {
+            return valor;
         }
 
         @Override
         public double descontoPagamento(double valor) {
-            return 0;
+            return valor;
         }
     },
-    CREDITO{
+    CREDITO {
         @Override
-        public double taxaMaquininha(double valor) {
+        public double jurosParcela(double valor) {
             return valor * 1.05;
         }
 
         @Override
         public double descontoPagamento(double valor) {
-            return 0;
+            return valor;
         }
     },
     PIX {
         @Override
-        public double taxaMaquininha(double valor) {
-            return 0;
+        public double jurosParcela(double valor) {
+            return valor;
         }
 
         @Override
         public double descontoPagamento(double valor) {
+            System.out.print("Valor Desconto A Vista: R$ ");
             return valor - (valor * 0.1);
         }
     };
 
-    public abstract double descontoPagamento(double valor);
+    public abstract double jurosParcela(double valor);
 
-    public abstract double taxaMaquininha(double valor);
+    public abstract double descontoPagamento(double valor);
 }

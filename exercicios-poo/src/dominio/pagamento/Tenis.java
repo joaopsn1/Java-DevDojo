@@ -2,6 +2,8 @@ package dominio.pagamento;
 
 import java.util.Scanner;
 
+import static dominio.pagamento.TipoPagamento.CREDITO;
+
 public class Tenis {
     Scanner scanner = new Scanner(System.in);
     private Pessoa pessoa;
@@ -23,12 +25,17 @@ public class Tenis {
         System.out.println("Tipo de Pagamento: " + tipoPagamento);
     }
 
+    public void calculoValorParcela() {
+        System.out.print("Quantas Parcelas? ");
+        int parcelas = scanner.nextInt();
+        double valorParcelado = tipoPagamento.jurosParcela(this.valor);
+        double valorParcela = valorParcelado / parcelas;
+        System.out.println(parcelas + " parcelas de R$ " + valorParcela);
+    }
+
     public void parcelas() {
-        if (tipoPagamento == TipoPagamento.CREDITO) {
-            System.out.print("Quantas Parcelas? ");
-            int parcelas = scanner.nextInt();
-            double valorParcelas = getTipoPagamento().taxaMaquininha(this.valor) / parcelas;
-            System.out.println(parcelas + " parcelas de R$ " + valorParcelas );
+        if (tipoPagamento == CREDITO) {
+            calculoValorParcela();
             return;
         }
         System.out.println("Tenis pago a vista!");
