@@ -1,6 +1,5 @@
 package academy.devdojo.maratonajava.javacore.ZZGconcorrencia.test;
 
-import academy.devdojo.maratonajava.javacore.ZZGconcorrencia.service.StoreService;
 import academy.devdojo.maratonajava.javacore.ZZGconcorrencia.service.StoreServiceDeprecated;
 
 import java.util.List;
