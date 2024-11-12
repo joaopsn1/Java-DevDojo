@@ -1,6 +1,6 @@
 package academy.devdojo.maratonajava.javacore.ZZGconcorrencia.dominio;
 
-// storename:price:discountCode
+// storeName:price:discountCode
 public class Discount {
     public enum Code {
         NONE(0), SUPER_SAYAJIN(5), SUPER_SAYAJIN2(10), SUPER_SAYAJIN3(15);

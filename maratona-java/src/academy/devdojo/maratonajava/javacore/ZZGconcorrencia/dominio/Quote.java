@@ -13,7 +13,7 @@ public final class Quote {
     }
 
     /**
-     * Creates new Quote object form the value following the pattern storeName:price:discountCode
+     * Creates new Quote object from the value following the pattern storeName:price:discountCode
      * @param value containing storeName:price:discountCode
      * @return new Quote with values from @param value
      */
