@@ -19,7 +19,11 @@ public final class AircraftSingletonLazy {
 
     public static AircraftSingletonLazy getINSTANCE() {
         if (INSTANCE == null) {
-            INSTANCE = new AircraftSingletonLazy("787-900");
+            synchronized (AircraftSingletonLazy.class) {
+                if (INSTANCE == null) {
+                    INSTANCE = new AircraftSingletonLazy("787-900");
+                }
+            }
         }
         return INSTANCE;
     }
