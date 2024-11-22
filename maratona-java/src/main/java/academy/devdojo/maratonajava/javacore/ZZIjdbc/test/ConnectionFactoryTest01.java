@@ -11,7 +11,7 @@ import java.util.List;
 public class ConnectionFactoryTest01 {
     public static void main(String[] args) {
         Producer producer = Producer.builder().name("NHK").build();
-        Producer producerToUpdate = Producer.builder().id(3).name("Studio Deen").build();
+        Producer producerToUpdate = Producer.builder().id(1).name("madhouse").build();
 //        ProducerService.save(producer);
 //        ProducerService.delete(4);
 //        ProducerService.update(producerToUpdate);
@@ -23,6 +23,8 @@ public class ConnectionFactoryTest01 {
 //        ProducerService.showTypeScrollWorking();
 //        List<Producer> producers = ProducerService.findByNameAndUpdateToUpperCase("Deen");
 //        List<Producer> producers = ProducerService.findByNameAndInsertWhenNotFound("A-1 Pictures");
-        ProducerService.findByNameAndDelete("A-1 Pictures");
+//        List<Producer> producers = ProducerService.findByNamePreparedStatement("Bo");
+//        log.info("Producers found '{}'", producers);
+        ProducerService.updatePreparedStatement(producerToUpdate);
     }
 }
